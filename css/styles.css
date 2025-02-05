@@ -1,0 +1,42 @@
+body {
+    background-image: url("../css/minecraft.png");
+    background-repeat: no-repeat;
+
+    background-size: cover;
+    color: azure;
+}
+
+input[type=button] {
+    width: 150px;
+    height: 150px;
+    font-size: 80px;
+
+}
+
+table {
+    position: relative;
+    border-collapse: collapse;
+}
+
+td,
+tr {
+    position: relative;
+    /*refiere al mismo objeto*/
+}
+
+/*td:nth-child(1)::after {
+    content: "";
+    /*Se necesita que este en cadena vacpia para que se visualize la linea
+    position: relative;
+    /*cambiar para que salga en absolte para que salga arrioba de los botones
+    /*esqina superior izquierda al qye se refiere
+    top: -1px;
+    /*cambia en donde empieza la linea desde arriba para abajo
+    bottom: -1px;
+    left: 50%;
+    width: 5px;
+    background-color: #C45886;
+    z-index: 1;
+    pointer-events: none;
+
+}*/
