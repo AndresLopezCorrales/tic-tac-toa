@@ -135,15 +135,14 @@ function verificar() {
     else if (botones[0].value == botones[4].value && botones[4].value == botones[8].value && botones[0].value != "") {
         document.getElementById("turno").innerHTML = `Gana: ${botones[0].value}`;
         bloquear();
-        estilo.textContent = `tr:nth-child(1) td:nth-child(1)::after {
+        estilo.textContent = `table::after {
                                 content: "";
                                 position: absolute;
                                 top: 0;
-                                left: 4px;
-                                width: 420%;
-                                /* Asegura que la línea cubra toda la diagonal */
-                                height: 5px;
-                                background-color: #C45886;
+                                left: 0;
+                                width: calc(100% * 1.4);
+                                height: calc(100% * 1.4);
+                                border-top: 5px solid black;
                                 transform: rotate(45deg);
                                 transform-origin: top left;
                                 z-index: 1;
@@ -154,15 +153,14 @@ function verificar() {
     else if (botones[2].value == botones[4].value && botones[4].value == botones[6].value && botones[2].value != "") {
         document.getElementById("turno").innerHTML = `Gana: ${botones[2].value}`;
         bloquear();
-        estilo.textContent = `tr:nth-child(1) td:nth-child(3)::after {
+        estilo.textContent = `table::before {
                                 content: "";
                                 position: absolute;
                                 top: 0;
-                                left: -322%;
-                                width: 420%;
-                                /* Asegura que la línea cubra toda la diagonal */
-                                height: 5px;
-                                background-color: #C45886;
+                                right: 0;
+                                width: calc(100% * 1.4);
+                                height: calc(100% * 1.4);
+                                border-top: 5px solid black;
                                 transform: rotate(-45deg);
                                 transform-origin: top right;
                                 z-index: 1;
