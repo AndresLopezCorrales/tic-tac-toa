@@ -135,11 +135,40 @@ function verificar() {
     else if (botones[0].value == botones[4].value && botones[4].value == botones[8].value && botones[0].value != "") {
         document.getElementById("turno").innerHTML = `Gana: ${botones[0].value}`;
         bloquear();
+        estilo.textContent = `tr:nth-child(1) td:nth-child(1)::after {
+                                content: "";
+                                position: absolute;
+                                top: 0;
+                                left: 4px;
+                                width: 420%;
+                                /* Asegura que la línea cubra toda la diagonal */
+                                height: 5px;
+                                background-color: #C45886;
+                                transform: rotate(45deg);
+                                transform-origin: top left;
+                                z-index: 1;
+                                pointer-events: none;
+                            }`;
     }
 
     else if (botones[2].value == botones[4].value && botones[4].value == botones[6].value && botones[2].value != "") {
         document.getElementById("turno").innerHTML = `Gana: ${botones[2].value}`;
         bloquear();
+        estilo.textContent = `tr:nth-child(1) td:nth-child(3)::after {
+                                content: "";
+                                position: absolute;
+                                top: 0;
+                                left: -322%;
+                                width: 420%;
+                                /* Asegura que la línea cubra toda la diagonal */
+                                height: 5px;
+                                background-color: #C45886;
+                                transform: rotate(-45deg);
+                                transform-origin: top right;
+                                z-index: 1;
+                                pointer-events: none;
+                            }`;
+
     }
 
     document.head.appendChild(estilo); //meterlo al css

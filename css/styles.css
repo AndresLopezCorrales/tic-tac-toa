@@ -54,3 +54,18 @@ tr:nth-child(1)::after {
     z-index: 1;
     pointer-events: none;
 }*/
+
+
+/*tr:nth-child(1) td:nth-child(3)::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -322%;
+    width: 420%;
+    height: 5px;
+    background-color: #C45886;
+    transform: rotate(-45deg);
+    transform-origin: top right;
+    z-index: 1;
+    pointer-events: none;
+}*/
