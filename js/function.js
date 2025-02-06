@@ -25,25 +25,59 @@ function verificar() {
 
     }
 
+    //horizontales
     if (botones[0].value == botones[1].value && botones[1].value == botones[2].value && botones[0].value != "") {
         document.getElementById("turno").innerHTML = `Gana: ${botones[0].value}`;
         bloquear();
+        estilo.textContent = `tr:nth-child(1)::after {
+                                content: "";
+                                position: absolute;
+                                top: 50%;
+                                right: 5px;
+                                left: 0;
+                                height: 5px;
+                                background-color: #C45886;
+                                z-index: 1;
+                                pointer-events: none;
+                            }`;
     }
 
     else if (botones[3].value == botones[4].value && botones[4].value == botones[5].value && botones[3].value != "") {
         document.getElementById("turno").innerHTML = `Gana: ${botones[3].value}`;
         bloquear();
+        estilo.textContent = `tr:nth-child(2)::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 5px;
+            left: 0;
+            height: 5px;
+            background-color: #C45886;
+            z-index: 1;
+            pointer-events: none;
+        }`;
     }
 
     else if (botones[6].value == botones[7].value && botones[7].value == botones[8].value && botones[6].value != "") {
         document.getElementById("turno").innerHTML = `Gana: ${botones[6].value}`;
         bloquear();
+        estilo.textContent = `tr:nth-child(3)::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 5px;
+            left: 0;
+            height: 5px;
+            background-color: #C45886;
+            z-index: 1;
+            pointer-events: none;
+        }`;
     }
 
-    else if (botones[3].value == botones[4].value && botones[4].value == botones[5].value && botones[3].value != "") {
+    /*else if (botones[3].value == botones[4].value && botones[4].value == botones[5].value && botones[3].value != "") {
         document.getElementById("turno").innerHTML = `Gana: ${botones[3].value}`;
         bloquear();
-    }
+    }*/
 
     //verticales
     else if (botones[0].value == botones[3].value && botones[3].value == botones[6].value && botones[0].value != "") {

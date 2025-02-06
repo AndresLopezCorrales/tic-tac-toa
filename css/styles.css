@@ -24,6 +24,8 @@ tr {
     /*refiere al mismo objeto*/
 }
 
+
+
 /*td:nth-child(1)::after {
     content: "";
     /*Se necesita que este en cadena vacpia para que se visualize la linea
@@ -39,4 +41,16 @@ tr {
     z-index: 1;
     pointer-events: none;
 
+}
+
+tr:nth-child(1)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    left: 0;
+    height: 5px;
+    background-color: #C45886;
+    z-index: 1;
+    pointer-events: none;
 }*/
