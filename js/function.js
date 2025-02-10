@@ -511,6 +511,9 @@ function imagenNadieGana() {
 //Boton reiniciar
 function limpiarTodo() {
 
+    var selectDis = document.getElementById("imagenes");
+    selectDis.style.cursor = "pointer";
+
     terminado = false;
 
     contador = 0;
@@ -573,8 +576,11 @@ function quitarLineasGana() {
 
     var estilos = document.querySelectorAll('head style');
 
-    estilos.forEach(estiloo => {
-        estiloo.remove();
+    estilos.forEach((estiloo, index) => {
+        if (index !== 0) {
+            estiloo.remove();
+        }
+
     });
 }
 
