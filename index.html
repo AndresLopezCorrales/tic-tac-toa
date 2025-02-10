@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html">
 
-<head>
+<head id="head">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic tac toe</title>
@@ -10,27 +10,70 @@
 </head>
 
 <body>
+    <!--Titulo-->
+    <h1 id="titulo">Tic Tac Toe</h1>
+    <div id="div-flex">
 
-    <table>
-        <tr>
-            <td><input type="button" value="" onclick="turno(this)"></td>
-            <td><input type="button" value="" onclick="turno(this)"></td>
-            <td><input type="button" value="" onclick="turno(this)"></td>
-        </tr>
-        <tr>
-            <td><input type="button" value="" onclick="turno(this)"></td>
-            <td><input type="button" value="" onclick="turno(this)"></td>
-            <td><input type="button" value="" onclick="turno(this)"></td>
-        </tr>
-        <tr>
-            <td><input type="button" value="" onclick="turno(this)"></td>
-            <td><input type="button" value="" onclick="turno(this)"></td>
-            <td><input type="button" value="" onclick="turno(this)"></td>
-        </tr>
-    </table>
-    <h1 id="turno">Turno: </h1>
+        <!--Tabla-->
+        <div id="div-tabla">
+            <table id="tablero">
+                <tr>
+                    <td><input type="button" value="" onclick="turno(this)" class="celda"></td>
+                    <td><input type="button" value="" onclick="turno(this)" class="celda"></td>
+                    <td><input type="button" value="" onclick="turno(this)" class="celda"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="" onclick="turno(this)" class="celda"></td>
+                    <td><input type="button" value="" onclick="turno(this)" class="celda"></td>
+                    <td><input type="button" value="" onclick="turno(this)" class="celda"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="" onclick="turno(this)" class="celda"></td>
+                    <td><input type="button" value="" onclick="turno(this)" class="celda"></td>
+                    <td><input type="button" value="" onclick="turno(this)" class="celda"></td>
+                </tr>
+            </table>
+
+            <!--Turno siguiente y tempo-->
+            <div id="div-turnoTemp">
+                <button onclick="limpiarTodo()" id="reiniciar">Reiniciar</button> <!--Reiniciar-->
+                <div id="div-imgSig">
+                    <h1 id="turno">Turno: </h1>
+                    <img id="img-sig" src="" alt="">
+                    <p id="temporizador">03:00</p>
+                </div>
+            </div>
+        </div>
+
+        <!--Div-Personalización-->
+        <div id="div-tableroAtaque">
+            <p id="texto-par">Elige tu par: </p>
+            <select name="" id="imagenes" onchange="cambiarPersonaje()">
+                <option value="fnaf">FNAF</option>
+                <option value="nana">Nana</option>
+                <option value="pkm">Pokemon</option>
+            </select>
+            <p id="texto-colores">Colores</p>
+            <div id="div-colorTablero">
+                <!--Color tablero-->
+                <p class="texto-color">Color1</p>
+                <input type="color" name="color-par" id="color-par" oninput="colorPar()">
+                <p id="texto-color2" class="texto-color">Color2</p>
+                <input type="color" name="color-impar" id="color-impar" oninput="colorImpar()">
+            </div>
+
+            <div id="div-lineaGana">
+                <!--Color linea de ataque-->
+                <p class="texto-color">Color linea ataque</p>
+                <input type="color" name="color-ganador" id="color-ganador" oninput="cambiarColorGanador()">
+            </div>
+
+        </div>
 
 
+
+
+    </div>
 </body>
 
 </html>

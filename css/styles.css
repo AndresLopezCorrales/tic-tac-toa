@@ -1,15 +1,63 @@
-body {
-    background-image: url("../css/minecraft.png");
-    background-repeat: no-repeat;
+:root {
+    --impar: aliceblue;
+    --par: aliceblue;
+    --gana: black;
+}
 
+body {
+    background-color: aliceblue;
+}
+
+/* Celdas con botones en posiciones impares */
+#tablero tr:nth-child(even) td:nth-child(even) .celda,
+#tablero tr:nth-child(odd) td:nth-child(odd) .celda {
+    background-color: var(--impar);
+}
+
+/* Celdas con botones en posiciones pares */
+#tablero tr:nth-child(even) td:nth-child(odd) .celda,
+#tablero tr:nth-child(odd) td:nth-child(even) .celda {
+    background-color: var(--par);
+}
+
+#tablero .celda {
+    border: none;
+}
+
+#tablero td {
+    border: 1rem solid black;
+    /* Borde interno */
+}
+
+#tablero tr:first-child td {
+    border-top: none;
+    /* Sin borde superior en la primera fila */
+}
+
+#tablero tr:last-child td {
+    border-bottom: none;
+    /* Sin borde inferior en la última fila */
+}
+
+#tablero tr td:first-child {
+    border-left: none;
+    /* Sin borde izquierdo en la primera celda de cada fila */
+}
+
+#tablero tr td:last-child {
+    border-right: none;
+    /* Sin borde derecho en la última celda de cada fila */
+}
+
+body {
     background-size: cover;
-    color: azure;
+    color: black;
 }
 
 input[type=button] {
     width: 150px;
     height: 150px;
-    font-size: 80px;
+    font-size: .1px;
 
 }
 
@@ -22,4 +70,157 @@ td,
 tr {
     position: relative;
     /*refiere al mismo objeto*/
+}
+
+#div-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+#div-tabla {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+#div-tableroAtaque {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    padding: 4rem;
+    margin-bottom: 7rem;
+}
+
+.texto-color {
+    margin-right: 0.5rem;
+}
+
+#texto-color2 {
+    margin-left: 0.5rem;
+}
+
+#texto-colores,
+#texto-par {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+#div-colorTablero,
+#div-lineaGana {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+#div-turnoTemp {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#temporizador,
+#turno {
+    padding: 2rem;
+}
+
+#temporizador {
+    font-size: 2rem;
+}
+
+select {
+    font-size: 1rem;
+    padding: 0.4rem;
+    border: 2px solid #333;
+    border-radius: 0.3rem;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+}
+
+select:hover {
+    border-color: #f1596f;
+}
+
+select:focus {
+    outline: none;
+    border-color: #f1596f;
+}
+
+option {
+    background: #fff;
+    color: #333;
+    padding: 5px;
+}
+
+#titulo {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 3rem;
+}
+
+#reiniciar {
+    height: 2rem;
+    cursor: pointer;
+}
+
+#reiniciar:hover {
+    background-color: red;
+    color: azure;
+    border-color: aliceblue;
+}
+
+input[type=color],
+input[type=button] {
+    cursor: pointer;
+}
+
+#div-imgSig {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 800px) {
+    input[type=button] {
+        width: 100px;
+        height: 100px;
+        font-size: .1px;
+
+    }
+
+    #div-turnoTemp {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #reiniciar {
+        margin-top: 2rem;
+    }
+
+    #div-tableroAtaque {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        align-content: center;
+        padding: 0.1rem;
+    }
+
 }
